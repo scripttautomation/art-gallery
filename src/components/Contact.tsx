@@ -75,7 +75,7 @@ export default function Contact() {
           <div>
             <Reveal>
               <p className="mb-5 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-gold">
-                <span className="h-px w-8 bg-gold/60" /> 04 — Contact
+                <span className="h-px w-8 bg-gold/60" /> 03 — Contact
               </p>
               <h2 className="font-display text-6xl font-bold leading-[0.9] text-bone md:text-8xl">
                 Let's make

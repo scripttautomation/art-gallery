@@ -2,10 +2,8 @@ import { MotionConfig, motion, useScroll, useSpring } from "framer-motion";
 import Logo from "./components/Logo";
 import Hero from "./components/Hero";
 import Works from "./components/Works";
-import Exhibitions from "./components/Exhibitions";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 
 function ScrollProgress() {
   const { scrollYProgress } = useScroll();
@@ -37,11 +35,9 @@ export default function App() {
         <main>
           <Hero />
           <Works />
-          <Exhibitions />
           <About />
           <Contact />
         </main>
-        <Footer />
         <div className="noise-overlay" aria-hidden />
       </div>
     </MotionConfig>
