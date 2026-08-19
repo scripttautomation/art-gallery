@@ -1,15 +1,14 @@
-export type Category = "Light" | "Sculpture" | "Digital";
-
 export interface Work {
   id: number;
   title: string;
   year: number;
   medium: string;
-  category: Category;
+  category: string;
   dimensions: string;
   edition: string;
   image: string;
   description: string;
+  custom?: boolean;
 }
 
 const u = (id: string, w: number) =>
@@ -21,7 +20,7 @@ export const WORKS: Work[] = [
     title: "Chromatic Relic No.4",
     year: 2025,
     medium: "Light installation — steel, glass & photon",
-    category: "Light",
+    category: "Masterpiece",
     dimensions: "640 × 220 × 220 cm",
     edition: "Unique piece",
     image: u("photo-1618005182384-a83a8bd57fbe", 2000),
@@ -33,7 +32,7 @@ export const WORKS: Work[] = [
     title: "Vessel of Silence",
     year: 2024,
     medium: "Sculpture — polished chrome & blown glass",
-    category: "Sculpture",
+    category: "Masterpiece",
     dimensions: "118 × 64 × 64 cm",
     edition: "1 of 3",
     image: u("photo-1633167606207-d840b5070fc2", 1400),
@@ -45,7 +44,7 @@ export const WORKS: Work[] = [
     title: "Nocturne 07",
     year: 2024,
     medium: "Digital material study — volumetric render",
-    category: "Digital",
+    category: "Art",
     dimensions: "8K render, infinite",
     edition: "Edition of 12",
     image: u("photo-1620641788421-7a1c342ea42e", 1400),
@@ -57,7 +56,7 @@ export const WORKS: Work[] = [
     title: "Hollow Light",
     year: 2023,
     medium: "Kinetic light object — aluminium & LED",
-    category: "Light",
+    category: "Art",
     dimensions: "240 × 90 × 90 cm",
     edition: "Unique piece",
     image: u("photo-1634017839464-5c339ebe3cb4", 1400),
@@ -69,7 +68,7 @@ export const WORKS: Work[] = [
     title: "Strata",
     year: 2023,
     medium: "Pigment on brushed steel",
-    category: "Sculpture",
+    category: "Masterpiece",
     dimensions: "310 × 180 cm",
     edition: "Unique piece",
     image: u("photo-1541701494587-cb58502866ab", 1400),
@@ -81,7 +80,7 @@ export const WORKS: Work[] = [
     title: "Event Horizon",
     year: 2022,
     medium: "Smoke & resin cast",
-    category: "Sculpture",
+    category: "Art",
     dimensions: "95 × 95 × 40 cm",
     edition: "1 of 5",
     image: u("photo-1518640467707-6811f4a6ab73", 1400),
@@ -93,7 +92,7 @@ export const WORKS: Work[] = [
     title: "Molten Cartography",
     year: 2025,
     medium: "Generative print on anodised aluminium",
-    category: "Digital",
+    category: "Masterpiece",
     dimensions: "150 × 150 cm",
     edition: "Edition of 8",
     image: u("photo-1553356084-58ef4a67b2a7", 1400),
@@ -105,7 +104,7 @@ export const WORKS: Work[] = [
     title: "Signal Bloom",
     year: 2022,
     medium: "Real-time render — sound-reactive",
-    category: "Digital",
+    category: "Art",
     dimensions: "Variable, screen-based",
     edition: "Open edition",
     image: u("photo-1617791160536-598cf32026fb", 1400),
@@ -117,7 +116,7 @@ export const WORKS: Work[] = [
     title: "Threshold II",
     year: 2021,
     medium: "Light corridor — fog & tungsten",
-    category: "Light",
+    category: "Art",
     dimensions: "12 m corridor",
     edition: "Site-specific",
     image: u("photo-1549490349-8643362247b5", 1400),
@@ -182,10 +181,10 @@ export const EXHIBITIONS: Exhibition[] = [
 export const PORTRAIT = u("photo-1531746020798-e6953c6e8e04", 1100);
 
 export const SOCIALS = [
-  { label: "Instagram", handle: "@mara.vesper", href: "https://instagram.com" },
-  { label: "Behance", handle: "maravesper", href: "https://behance.net" },
-  { label: "X / Twitter", handle: "@vesperstudio", href: "https://x.com" },
-  { label: "Vimeo", handle: "vesperstudio", href: "https://vimeo.com" },
+  { label: "Instagram", handle: "@artist", href: "https://instagram.com" },
+  { label: "Behance", handle: "artist", href: "https://behance.net" },
+  { label: "X / Twitter", handle: "@artist", href: "https://x.com" },
+  { label: "Vimeo", handle: "artiststudio", href: "https://vimeo.com" },
 ] as const;
 
-export const EMAIL = "hello@maravesper.studio";
+export const EMAIL = "hello@artist.studio";

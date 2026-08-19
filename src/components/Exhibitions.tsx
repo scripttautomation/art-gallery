@@ -3,64 +3,70 @@ import { EXHIBITIONS } from "../data/works";
 
 export default function Exhibitions() {
   return (
-    <section id="exhibitions" className="relative scroll-mt-24 border-t border-bone/[0.06] bg-coal/40 py-24 md:py-32">
+    <section id="exhibitions" className="relative scroll-mt-24 py-24 md:py-28">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
-        <div className="mb-14 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
-          <Reveal>
+        <div className="grid gap-14 lg:grid-cols-12">
+          <Reveal className="lg:col-span-5">
             <p className="mb-5 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-gold">
-              <span className="h-px w-8 bg-gold/60" /> 02 — Selected exhibitions
+              <span className="h-px w-8 bg-gold/60" /> 02 — Exhibitions
             </p>
-            <h2 className="font-display text-5xl font-extrabold leading-[0.95] tracking-tight text-bone md:text-7xl">
-              Shown in <span className="text-outline-faint">public</span>
+            <h2 className="font-display text-6xl font-bold leading-[0.9] text-bone md:text-8xl">
+              Where the
+              <br />
+              art has lived<span className="text-gold">.</span>
             </h2>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <p className="max-w-xs text-sm leading-relaxed text-fog">
-              A decade of rooms, corridors and darkened halls — selected
-              presentations from Copenhagen to Brescia.
+            <p className="mt-7 max-w-sm text-[15px] leading-relaxed text-fog">
+              Selected exhibitions &amp; shows — a slow map of rooms that
+              agreed to go dark for a while.
             </p>
+            <div className="mt-9 inline-flex items-center gap-3 rounded-full border border-bone/10 bg-coal/60 px-5 py-3">
+              <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-gold" />
+              <span className="font-mono text-[9.5px] uppercase tracking-[0.22em] text-fog">
+                Next — Berlin, spring 2026
+              </span>
+            </div>
           </Reveal>
+
+          <div className="lg:col-span-7">
+            <div className="border-t border-bone/[0.07]">
+              {EXHIBITIONS.map((e, i) => (
+                <Reveal key={`${e.year}-${e.title}`} delay={i * 0.05}>
+                  <div className="expo-row group grid grid-cols-[auto_1fr_auto] items-baseline gap-5 rounded-lg border-b border-bone/[0.07] px-2 py-6 md:grid-cols-[88px_1fr_auto_auto] md:gap-8">
+                    <span className="font-mono text-xs tracking-[0.18em] text-gold">{e.year}</span>
+                    <div>
+                      <h3 className="expo-title font-display text-3xl font-semibold leading-none text-bone md:text-4xl">
+                        {e.title}
+                      </h3>
+                      <p className="mt-2 font-mono text-[9.5px] uppercase tracking-[0.2em] text-fog">
+                        {e.type}
+                      </p>
+                    </div>
+                    <span className="hidden text-sm text-fog md:block">
+                      {e.venue} — {e.location}
+                    </span>
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 15 15"
+                      fill="none"
+                      className="expo-arrow self-center text-fog/40"
+                      aria-hidden
+                    >
+                      <path d="M3 12L12 3M5 3h7v7" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="border-t border-bone/[0.07]">
-          {EXHIBITIONS.map((e, i) => (
-            <Reveal key={`${e.year}-${e.title}`} delay={i * 0.05}>
-              <div className="expo-row group grid grid-cols-2 items-baseline gap-x-4 gap-y-1 border-b border-bone/[0.07] px-2 py-6 md:grid-cols-[90px_1.3fr_1fr_auto_40px] md:gap-6 md:px-4">
-                <span className="font-mono text-sm tracking-[0.2em] text-gold">{e.year}</span>
-                <h3 className="expo-title font-display text-xl font-bold tracking-tight text-bone md:text-2xl">
-                  {e.title}
-                </h3>
-                <p className="text-sm text-fog">
-                  {e.venue}
-                  <span className="text-fog/50"> — {e.location}</span>
-                </p>
-                <span className="hidden font-mono text-[10px] uppercase tracking-[0.22em] text-fog/70 md:block">
-                  {e.type}
-                </span>
-                <span className="expo-arrow hidden text-fog md:block" aria-hidden>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 12L12 2M4.5 2H12v7.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-
-        {/* pull quote */}
-        <Reveal from="scale" className="mx-auto mt-20 max-w-4xl md:mt-28">
-          <blockquote className="relative text-center">
-            <span className="font-display text-7xl leading-none text-gold/30" aria-hidden>
-              “
-            </span>
-            <p className="-mt-8 font-display text-2xl font-bold leading-snug tracking-tight text-bone md:text-[2.6rem] md:leading-[1.15]">
-              I don&rsquo;t shape objects — I arrange the{" "}
-              <span className="text-gold">silence</span> around them.
-            </p>
-            <footer className="mt-7 font-mono text-[11px] uppercase tracking-[0.3em] text-fog">
-              — M. Vesper, Nocturne Cycle catalogue
-            </footer>
-          </blockquote>
+        <Reveal delay={0.1} className="mt-20 text-center">
+          <p className="mx-auto max-w-3xl font-display text-4xl font-medium leading-snug text-bone/85 md:text-5xl">
+            “Art is not what you see —{" "}
+            <span className="text-gold">it's the pause</span> the room takes
+            when the light changes.”
+          </p>
         </Reveal>
       </div>
     </section>

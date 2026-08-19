@@ -1,3 +1,4 @@
+import Logo from "./Logo";
 import Magnetic from "./Magnetic";
 
 export default function Footer() {
@@ -6,17 +7,12 @@ export default function Footer() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         {/* top row */}
         <div className="flex items-center justify-between gap-6 py-10">
-          <a href="#top" className="group flex items-center gap-3">
-            <span className="grid h-8 w-8 place-items-center border border-gold/50 bg-gold/10 font-display text-sm font-bold text-gold transition-all duration-500 group-hover:bg-gold group-hover:text-ink">
-              V
-            </span>
-            <span className="font-display text-sm font-bold tracking-[0.35em] text-bone">
-              VESPER
-            </span>
+          <a href="#top" className="group" aria-label="Back to top">
+            <Logo size={40} withWordmark />
           </a>
 
           <nav className="hidden items-center gap-8 md:flex">
-            {["Works", "Exhibitions", "About", "Contact"].map((l) => (
+            {["Art", "Exhibitions", "About", "Contact"].map((l) => (
               <a
                 key={l}
                 href={`#${l.toLowerCase()}`}
@@ -42,14 +38,14 @@ export default function Footer() {
 
         {/* giant wordmark */}
         <div className="group pointer-events-none select-none overflow-hidden" aria-hidden>
-          <p className="text-outline-word -mb-[0.23em] text-center font-display text-[21vw] font-extrabold leading-none tracking-[-0.02em]">
-            VESPER
+          <p className="text-outline-word -mb-[0.2em] text-center font-display text-[23vw] font-bold leading-none">
+            Artist
           </p>
         </div>
 
         {/* bottom row */}
         <div className="flex flex-col items-center justify-between gap-3 border-t border-bone/[0.06] py-6 font-mono text-[9.5px] uppercase tracking-[0.22em] text-fog/60 md:flex-row">
-          <span>© 2026 Mara Vesper — all works under copyright</span>
+          <span>© 2026 Artist — all works under copyright</span>
           <span className="hidden md:block">Berlin — 52.52°N 13.40°E</span>
           <span>Design &amp; light by the studio</span>
         </div>

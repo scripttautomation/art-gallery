@@ -1,8 +1,6 @@
 import { MotionConfig, motion, useScroll, useSpring } from "framer-motion";
-import Cursor from "./components/Cursor";
-import Nav from "./components/Nav";
+import Logo from "./components/Logo";
 import Hero from "./components/Hero";
-import Marquee from "./components/Marquee";
 import Works from "./components/Works";
 import Exhibitions from "./components/Exhibitions";
 import About from "./components/About";
@@ -26,11 +24,18 @@ export default function App() {
     <MotionConfig reducedMotion="user">
       <div className="relative min-h-screen bg-ink font-sans text-bone antialiased">
         <ScrollProgress />
-        <Cursor />
-        <Nav />
+
+        {/* fixed brand mark */}
+        <a
+          href="#top"
+          aria-label="Artist — back to top"
+          className="fixed left-5 top-5 z-[70] transition-transform duration-500 hover:scale-110 md:left-8 md:top-7"
+        >
+          <Logo size={46} />
+        </a>
+
         <main>
           <Hero />
-          <Marquee />
           <Works />
           <Exhibitions />
           <About />

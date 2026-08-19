@@ -11,7 +11,7 @@
   --color-goldbright: #e7c98f;
   --color-golddeep: #7a6236;
 
-  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Caveat", "Segoe Script", "Comic Sans MS", cursive;
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
 
@@ -66,18 +66,6 @@ select:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px #111114 inset;
   -webkit-text-fill-color: #ece9e2;
   caret-color: #ece9e2;
-}
-
-/* ---------- custom cursor ---------- */
-
-html.custom-cursor,
-html.custom-cursor * {
-  cursor: none !important;
-}
-html.custom-cursor input,
-html.custom-cursor textarea,
-html.custom-cursor select {
-  cursor: text !important;
 }
 
 /* ---------- keyframes ---------- */
