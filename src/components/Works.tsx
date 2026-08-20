@@ -639,9 +639,18 @@ export default function Works() {
         </motion.div>
 
         {visible.length === 0 && (
-          <p className="mt-16 text-center font-display text-3xl text-fog">
-            Nothing hangs under this filter yet — add a piece above.
-          </p>
+          <div className="mt-16 flex flex-col items-center gap-4 text-center">
+            <p className="max-w-xl font-display text-4xl font-bold leading-tight text-bone/90 md:text-5xl">
+              {all.length === 0
+                ? "A fresh wall, waiting for its first piece."
+                : "Nothing hangs under this filter yet."}
+            </p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.26em] text-fog">
+              {all.length === 0
+                ? "Click “Add your art” to begin the collection"
+                : "Add a piece above — or tap the filter again to see everything"}
+            </p>
+          </div>
         )}
       </div>
 
